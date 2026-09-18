@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 100" width="800" height="100">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&amp;display=swap');
       .bg { fill: #07090F; }
       .grid { stroke: rgba(255, 255, 255, 0.02); stroke-width: 1; }
       .text-step { font-family: 'Fira Code', monospace; font-size: 13px; font-weight: 500; fill: #8892B0; letter-spacing: 2px; text-anchor: middle; }
-      .arrow { fill: #00F0FF; font-family: 'Fira Code', monospace; font-size: 14px; text-anchor: middle; opacity: 0.7; }
-      .highlight { fill: #00F0FF; filter: drop-shadow(0 0 3px rgba(0, 240, 255, 0.5)); }
+      .arrow { fill: #4B5563; font-family: 'Fira Code', monospace; font-size: 14px; text-anchor: middle; }
+      .arrow-active { fill: #00F0FF; font-family: 'Fira Code', monospace; font-size: 14px; text-anchor: middle; }
+      .highlight { fill: #00F0FF; filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.5)); font-weight: 700; }
+      .highlight-purple { fill: #9D00FF; filter: drop-shadow(0 0 4px rgba(157, 0, 255, 0.5)); font-weight: 700; }
       .line { stroke: #1A202C; stroke-width: 1; }
     </style>
     <pattern id="gridPatternFooter" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -14,29 +16,32 @@
     </pattern>
   </defs>
 
-  <rect width="800" height="100" class="bg" rx="8" />
-  <rect width="800" height="100" fill="url(#gridPatternFooter)" rx="8" />
+  <rect width="800" height="100" class="bg" rx="6" />
+  <rect width="800" height="100" fill="url(#gridPatternFooter)" rx="6" />
   
-  <line x1="50" y1="50" x2="750" y2="50" class="line" />
+  <line x1="40" y1="50" x2="760" y2="50" class="line" />
 
   <g transform="translate(0, 55)">
-    <text x="80" y="0" class="text-step highlight">BUILD</text>
+    <text x="80" y="0" class="text-step">BUILD</text>
     <text x="145" y="0" class="arrow">→</text>
     
     <text x="210" y="0" class="text-step">TRAIN</text>
     <text x="275" y="0" class="arrow">→</text>
 
     <text x="350" y="0" class="text-step">EVALUATE</text>
-    <text x="435" y="0" class="arrow">→</text>
+    <text x="435" y="0" class="arrow-active">→</text>
 
-    <text x="510" y="0" class="text-step highlight">ENGINEER</text>
-    <text x="585" y="0" class="arrow">→</text>
+    <text x="510" y="0" class="text-step highlight-purple">ENGINEER</text>
+    <text x="585" y="0" class="arrow-active">→</text>
 
-    <text x="650" y="0" class="text-step">DEPLOY</text>
-    <text x="710" y="0" class="arrow">→</text>
+    <text x="650" y="0" class="text-step highlight">DEPLOY</text>
+    <text x="710" y="0" class="arrow-active">→</text>
     
     <text x="760" y="0" class="text-step">ITERATE</text>
   </g>
   
-  <rect x="0" y="0" width="800" height="2" fill="#00F0FF" opacity="0.3" />
+  <!-- Animated bottom glow line -->
+  <rect x="0" y="98" width="800" height="2" fill="#00F0FF" opacity="0.3">
+    <animate attributeName="opacity" values="0.1;0.6;0.1" dur="3s" repeatCount="indefinite" />
+  </rect>
 </svg>

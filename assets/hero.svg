@@ -1,20 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&amp;display=swap');
       .bg { fill: #07090F; }
-      .grid { stroke: rgba(255, 255, 255, 0.03); stroke-width: 1; }
-      .name { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; fill: #FFFFFF; letter-spacing: 2px; }
-      .title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; fill: #00F0FF; letter-spacing: 4px; }
-      .tagline { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 400; fill: #8892B0; letter-spacing: 1px; }
+      .grid { stroke: rgba(255, 255, 255, 0.04); stroke-width: 1; }
+      .name { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; fill: #FFFFFF; letter-spacing: 3px; }
+      .title { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; fill: #00F0FF; letter-spacing: 5px; }
+      .tagline { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 300; fill: #8892B0; letter-spacing: 1px; }
       .accent { fill: #9D00FF; }
-      .line { stroke: #00F0FF; stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.5; }
+      .line { stroke: #00F0FF; stroke-width: 1; opacity: 0.3; }
+      .line-anim { stroke: #9D00FF; stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.5; }
       .node { fill: #07090F; stroke: #00F0FF; stroke-width: 2; }
-      .glow { filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6)); }
+      .node-purple { fill: #07090F; stroke: #9D00FF; stroke-width: 2; }
+      .glow { filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.7)); }
+      .glow-purple { filter: drop-shadow(0 0 10px rgba(157, 0, 255, 0.7)); }
     </style>
     <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
       <rect width="40" height="40" fill="none" />
       <path d="M 40 0 L 0 0 0 40" fill="none" class="grid" />
+      <circle cx="40" cy="40" r="1" fill="rgba(255,255,255,0.1)" />
     </pattern>
   </defs>
 
@@ -22,44 +26,78 @@
   <rect width="800" height="300" class="bg" rx="12" />
   <rect width="800" height="300" fill="url(#gridPattern)" rx="12" />
 
+  <!-- Data Flow Animation Lines -->
+  <g opacity="0.4">
+    <line x1="0" y1="220" x2="800" y2="220" class="line">
+      <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" repeatCount="indefinite" />
+    </line>
+    <line x1="0" y1="80" x2="800" y2="80" class="line">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3s" repeatCount="indefinite" />
+    </line>
+  </g>
+
   <!-- Neural Network Visual on the right -->
-  <g transform="translate(550, 50)" opacity="0.8">
-    <path d="M0,40 L60,20 L120,40 L180,20" class="line" />
-    <path d="M0,100 L60,80 L120,100 L180,80" class="line" />
-    <path d="M0,160 L60,140 L120,160 L180,140" class="line" />
+  <g transform="translate(520, 40)">
+    <!-- Connections -->
+    <path d="M0,50 L70,20 L140,50 L210,20" class="line-anim">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="1s" repeatCount="indefinite" />
+    </path>
+    <path d="M0,110 L70,80 L140,110 L210,80" class="line-anim">
+      <animate attributeName="stroke-dashoffset" values="0;8" dur="1.2s" repeatCount="indefinite" />
+    </path>
+    <path d="M0,170 L70,140 L140,170 L210,140" class="line-anim">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="1s" repeatCount="indefinite" />
+    </path>
     
-    <path d="M60,20 L120,100" class="line" opacity="0.2"/>
-    <path d="M60,80 L120,40" class="line" opacity="0.2"/>
-    <path d="M60,80 L120,160" class="line" opacity="0.2"/>
-    <path d="M60,140 L120,100" class="line" opacity="0.2"/>
+    <path d="M70,20 L140,110" class="line"/>
+    <path d="M70,80 L140,50" class="line"/>
+    <path d="M70,80 L140,170" class="line"/>
+    <path d="M70,140 L140,110" class="line"/>
 
-    <!-- Nodes -->
-    <circle cx="0" cy="40" r="4" class="node" />
-    <circle cx="0" cy="100" r="4" class="node" />
-    <circle cx="0" cy="160" r="4" class="node" />
+    <!-- Nodes Layer 1 -->
+    <circle cx="0" cy="50" r="4" class="node" />
+    <circle cx="0" cy="110" r="4" class="node" />
+    <circle cx="0" cy="170" r="4" class="node" />
 
-    <circle cx="60" cy="20" r="5" class="node glow" />
-    <circle cx="60" cy="80" r="5" class="node glow" />
-    <circle cx="60" cy="140" r="5" class="node glow" />
+    <!-- Nodes Layer 2 (Pulse) -->
+    <circle cx="70" cy="20" r="5" class="node glow">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="70" cy="80" r="6" class="node glow">
+      <animate attributeName="r" values="5;7;5" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="70" cy="140" r="5" class="node glow">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
+    </circle>
 
-    <circle cx="120" cy="40" r="6" class="node glow" style="stroke:#9D00FF;" />
-    <circle cx="120" cy="100" r="6" class="node glow" style="stroke:#9D00FF;" />
-    <circle cx="120" cy="160" r="6" class="node glow" style="stroke:#9D00FF;" />
+    <!-- Nodes Layer 3 (Purple Pulse) -->
+    <circle cx="140" cy="50" r="6" class="node-purple glow-purple">
+      <animate attributeName="r" values="5;7;5" dur="2.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="140" cy="110" r="7" class="node-purple glow-purple">
+      <animate attributeName="r" values="6;8;6" dur="2.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="140" cy="170" r="6" class="node-purple glow-purple">
+      <animate attributeName="r" values="5;7;5" dur="2.1s" repeatCount="indefinite" />
+    </circle>
 
-    <circle cx="180" cy="20" r="4" class="node" />
-    <circle cx="180" cy="80" r="4" class="node" />
-    <circle cx="180" cy="140" r="4" class="node" />
+    <!-- Nodes Layer 4 -->
+    <circle cx="210" cy="20" r="4" class="node" />
+    <circle cx="210" cy="80" r="4" class="node" />
+    <circle cx="210" cy="140" r="4" class="node" />
   </g>
 
   <!-- Left Side UI Elements -->
-  <rect x="40" y="40" width="20" height="4" fill="#00F0FF" />
-  <rect x="65" y="40" width="8" height="4" fill="#9D00FF" />
+  <rect x="40" y="40" width="30" height="4" fill="#00F0FF" />
+  <rect x="75" y="40" width="10" height="4" fill="#9D00FF" />
   
-  <text x="40" y="140" class="title glow">AI ENGINEER</text>
-  <text x="38" y="190" class="name">PRABU ARVIND M</text>
-  <text x="40" y="230" class="tagline">ARCHITECTING AI SYSTEMS • NLP • CV • DEPLOYMENT INFRASTRUCTURE</text>
+  <text x="40" y="130" class="title glow">AI ENGINEER</text>
+  <text x="38" y="185" class="name">PRABU ARVIND M</text>
+  <text x="40" y="225" class="tagline">BUILDING SCALABLE AI SYSTEMS &amp; DEVELOPER INFRASTRUCTURE</text>
 
   <!-- Status indicator -->
-  <circle cx="45" cy="270" r="4" fill="#00FF66" class="glow" />
-  <text x="60" y="274" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#00FF66" letter-spacing="1">SYSTEM.STATUS: ONLINE</text>
+  <circle cx="45" cy="265" r="4" fill="#00FF66" class="glow">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
+  </circle>
+  <text x="60" y="269" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600" fill="#00FF66" letter-spacing="1">SYSTEM.STATE: ONLINE_AND_READY</text>
 </svg>
