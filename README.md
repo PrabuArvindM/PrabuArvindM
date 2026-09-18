@@ -114,7 +114,7 @@ These projects demonstrate my ability to build across the entire AI stack—from
 
 <br>
 
-### `06 // Digital Portfolio`
+### `06 // DIGITAL PORTFOLIO`
 > **DIGITAL PRESENCE / AI ENGINEER PORTFOLIO**
 > 
 > My personal digital footprint showcasing projects, research, and engineering capabilities, built as a modern, responsive web application.
@@ -123,7 +123,7 @@ These projects demonstrate my ability to build across the entire AI stack—from
 > 
 > <sub>**TECH:** JavaScript • HTML/CSS • Responsive Design</sub>
 > 
-> [**[ 🟢 VIEW SYSTEM ]**](https://github.com/PrabuArvindM/MY_Website)
+> [**[ 🟢 VIEW SYSTEM ]**](https://github.com/PrabuArvindM/Digital-Portfolio)
 
 <br>
 
