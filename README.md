@@ -14,7 +14,7 @@
 
 I am an **AI Engineer** specializing in architecting, developing, and deploying end-to-end artificial intelligence systems. My expertise bridges the critical gap between machine learning models and production-ready applications. I build **Document Intelligence (OCR)**, **Natural Language Processing (NLP)**, and **Computer Vision** systems, powered by robust **Backend APIs** and **Developer Infrastructure**.
 
-My core engineering philosophy: **A model is not a product until it is deployed, scalable, and usable.**
+My core engineering philosophy: **I don't just build models. I engineer AI systems that think, integrate, and operate in the real world.**
 
 <br>
 
