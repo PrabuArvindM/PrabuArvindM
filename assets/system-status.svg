@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;display=swap');
+      .term-bg { fill: #0B0E14; stroke: #1A202C; stroke-width: 2; }
+      .term-bar { fill: #1A202C; }
+      .text-prompt { font-family: 'Fira Code', monospace; font-size: 14px; fill: #00FF66; }
+      .text-key { font-family: 'Fira Code', monospace; font-size: 14px; fill: #8892B0; }
+      .text-val { font-family: 'Fira Code', monospace; font-size: 14px; fill: #00F0FF; }
+      .text-val-purple { font-family: 'Fira Code', monospace; font-size: 14px; fill: #9D00FF; }
+      .glow-green { filter: drop-shadow(0 0 4px rgba(0, 255, 102, 0.4)); }
+      .circle-red { fill: #FF5F56; }
+      .circle-yellow { fill: #FFBD2E; }
+      .circle-green { fill: #27C93F; }
+    </style>
+  </defs>
+
+  <!-- Terminal Window -->
+  <rect x="10" y="10" width="780" height="220" rx="8" class="term-bg" />
+  <path d="M 10 18 Q 10 10 18 10 L 782 10 Q 790 10 790 18 L 790 40 L 10 40 Z" class="term-bar" />
+  
+  <!-- Window Controls -->
+  <circle cx="30" cy="25" r="6" class="circle-red" />
+  <circle cx="50" cy="25" r="6" class="circle-yellow" />
+  <circle cx="70" cy="25" r="6" class="circle-green" />
+
+  <!-- Content -->
+  <text x="30" y="70" class="text-prompt glow-green">prabu@ai-engineer:~$ ./system --status</text>
+  
+  <!-- Columns -->
+  <g transform="translate(30, 100)">
+    <text x="0" y="0" class="text-key">STATUS       :</text>
+    <text x="140" y="0" class="text-prompt glow-green">ONLINE [OPTIMAL]</text>
+
+    <text x="0" y="25" class="text-key">ROLE         :</text>
+    <text x="140" y="25" class="text-val">AI ENGINEER</text>
+
+    <text x="0" y="50" class="text-key">DOMAIN       :</text>
+    <text x="140" y="50" class="text-val-purple">ARTIFICIAL INTELLIGENCE &amp; DATA SCIENCE</text>
+
+    <text x="0" y="75" class="text-key">PRIMARY      :</text>
+    <text x="140" y="75" class="text-val">PYTHON</text>
+  </g>
+  
+  <g transform="translate(420, 100)">
+    <text x="0" y="0" class="text-key">ML / DL      :</text>
+    <text x="140" y="0" class="text-val">ACTIVE (PyTorch, TF)</text>
+
+    <text x="0" y="25" class="text-key">NLP / CV     :</text>
+    <text x="140" y="25" class="text-val">ACTIVE (Transformers, OCR)</text>
+
+    <text x="0" y="50" class="text-key">BACKEND      :</text>
+    <text x="140" y="50" class="text-val">FASTAPI / UVICORN</text>
+
+    <text x="0" y="75" class="text-key">INFRA        :</text>
+    <text x="140" y="75" class="text-val">FASTCONNECT / DOCKER</text>
+  </g>
+
+  <!-- Cursor -->
+  <rect x="30" y="195" width="10" height="16" fill="#00FF66" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- DYNAMIC_STATS_START -->
+  <g transform="translate(620, 20)">
+    <text x="0" y="0" font-family="'Fira Code', monospace" font-size="10" fill="#8892B0">LAST SYNC: 2026-09-18 06:36 UTC</text>
+    <text x="0" y="15" font-family="'Fira Code', monospace" font-size="10" fill="#8892B0">REPOSITORIES: Unknown</text>
+  </g>
+  <!-- DYNAMIC_STATS_END -->
+</svg>

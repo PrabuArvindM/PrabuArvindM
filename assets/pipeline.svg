@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="800" height="120">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&amp;display=swap');
+      .box { fill: #0B0E14; stroke: #1A202C; stroke-width: 2; rx: 6; }
+      .text-box { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; fill: #00F0FF; letter-spacing: 1px; text-anchor: middle; }
+      .arrow { stroke: #8892B0; stroke-width: 2; stroke-dasharray: 4 2; fill: none; }
+      .arrow-head { fill: #8892B0; }
+      .glow-box { filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.2)); stroke: #00F0FF; }
+      .glow-box-purple { filter: drop-shadow(0 0 4px rgba(157, 0, 255, 0.3)); stroke: #9D00FF; }
+      .text-purple { fill: #9D00FF; }
+    </style>
+    <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" class="arrow-head" />
+    </marker>
+  </defs>
+
+  <g transform="translate(10, 40)">
+    <!-- Nodes -->
+    <rect x="0" y="0" width="85" height="40" class="box" />
+    <text x="42.5" y="24" class="text-box">DATA</text>
+
+    <rect x="110" y="0" width="100" height="40" class="box" />
+    <text x="160" y="24" class="text-box">PREPROCESS</text>
+
+    <rect x="235" y="0" width="85" height="40" class="box glow-box" />
+    <text x="277.5" y="24" class="text-box">MODEL</text>
+
+    <rect x="345" y="0" width="85" height="40" class="box" />
+    <text x="387.5" y="24" class="text-box">EVALUATE</text>
+
+    <rect x="455" y="0" width="85" height="40" class="box glow-box-purple" />
+    <text x="497.5" y="24" class="text-box text-purple">API</text>
+
+    <rect x="565" y="0" width="100" height="40" class="box" />
+    <text x="615" y="24" class="text-box">APPLICATION</text>
+
+    <rect x="690" y="0" width="85" height="40" class="box glow-box" />
+    <text x="732.5" y="24" class="text-box">DEPLOY</text>
+
+    <!-- Arrows -->
+    <line x1="85" y1="20" x2="104" y2="20" class="arrow" marker-end="url(#arrowhead)" />
+    <line x1="210" y1="20" x2="229" y2="20" class="arrow" marker-end="url(#arrowhead)" />
+    <line x1="320" y1="20" x2="339" y2="20" class="arrow" marker-end="url(#arrowhead)" />
+    <line x1="430" y1="20" x2="449" y2="20" class="arrow" marker-end="url(#arrowhead)" />
+    <line x1="540" y1="20" x2="559" y2="20" class="arrow" marker-end="url(#arrowhead)" />
+    <line x1="665" y1="20" x2="684" y2="20" class="arrow" marker-end="url(#arrowhead)" />
+  </g>
+</svg>

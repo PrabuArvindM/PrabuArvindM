@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;display=swap');
+      .bg { fill: #07090F; }
+      .grid { stroke: rgba(255, 255, 255, 0.03); stroke-width: 1; }
+      .name { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; fill: #FFFFFF; letter-spacing: 2px; }
+      .title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; fill: #00F0FF; letter-spacing: 4px; }
+      .tagline { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 400; fill: #8892B0; letter-spacing: 1px; }
+      .accent { fill: #9D00FF; }
+      .line { stroke: #00F0FF; stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.5; }
+      .node { fill: #07090F; stroke: #00F0FF; stroke-width: 2; }
+      .glow { filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6)); }
+    </style>
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="none" />
+      <path d="M 40 0 L 0 0 0 40" fill="none" class="grid" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="300" class="bg" rx="12" />
+  <rect width="800" height="300" fill="url(#gridPattern)" rx="12" />
+
+  <!-- Neural Network Visual on the right -->
+  <g transform="translate(550, 50)" opacity="0.8">
+    <path d="M0,40 L60,20 L120,40 L180,20" class="line" />
+    <path d="M0,100 L60,80 L120,100 L180,80" class="line" />
+    <path d="M0,160 L60,140 L120,160 L180,140" class="line" />
+    
+    <path d="M60,20 L120,100" class="line" opacity="0.2"/>
+    <path d="M60,80 L120,40" class="line" opacity="0.2"/>
+    <path d="M60,80 L120,160" class="line" opacity="0.2"/>
+    <path d="M60,140 L120,100" class="line" opacity="0.2"/>
+
+    <!-- Nodes -->
+    <circle cx="0" cy="40" r="4" class="node" />
+    <circle cx="0" cy="100" r="4" class="node" />
+    <circle cx="0" cy="160" r="4" class="node" />
+
+    <circle cx="60" cy="20" r="5" class="node glow" />
+    <circle cx="60" cy="80" r="5" class="node glow" />
+    <circle cx="60" cy="140" r="5" class="node glow" />
+
+    <circle cx="120" cy="40" r="6" class="node glow" style="stroke:#9D00FF;" />
+    <circle cx="120" cy="100" r="6" class="node glow" style="stroke:#9D00FF;" />
+    <circle cx="120" cy="160" r="6" class="node glow" style="stroke:#9D00FF;" />
+
+    <circle cx="180" cy="20" r="4" class="node" />
+    <circle cx="180" cy="80" r="4" class="node" />
+    <circle cx="180" cy="140" r="4" class="node" />
+  </g>
+
+  <!-- Left Side UI Elements -->
+  <rect x="40" y="40" width="20" height="4" fill="#00F0FF" />
+  <rect x="65" y="40" width="8" height="4" fill="#9D00FF" />
+  
+  <text x="40" y="140" class="title glow">AI ENGINEER</text>
+  <text x="38" y="190" class="name">PRABU ARVIND M</text>
+  <text x="40" y="230" class="tagline">ARCHITECTING AI SYSTEMS • NLP • CV • DEPLOYMENT INFRASTRUCTURE</text>
+
+  <!-- Status indicator -->
+  <circle cx="45" cy="270" r="4" fill="#00FF66" class="glow" />
+  <text x="60" y="274" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#00FF66" letter-spacing="1">SYSTEM.STATUS: ONLINE</text>
+</svg>
